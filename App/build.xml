@@ -57,11 +57,7 @@
 		</jar>
 	</target>
 		
-	<target name="run" depends="jar">
-	        <java jar="${dist.dir}/End2EndAutoTest.jar" fork="true"/>
-	</target>	
-	
-	<target name="main" depends="clean,run">
+	<target name="main" depends="jar">
 		<description>Execute Main Target</description>
 	</target>
 	
