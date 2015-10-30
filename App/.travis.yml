@@ -1,7 +1,5 @@
 language: java
 
-install: cd App; ant main
-
 script: cd App; ant main
 
 jdk:
