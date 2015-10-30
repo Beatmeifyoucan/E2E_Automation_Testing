@@ -3,7 +3,6 @@ language: java
 script: cd App; ant main
 
 jdk:
-  - oraclejdk8
   - oraclejdk7
 
 deploy:
