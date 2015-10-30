@@ -1,6 +1,6 @@
 language: java
 
-install: cd App; ant main -DskipTests=true ; cd -
+install: cd App; ant deps -DskipTests=true ; cd -
 
 script: cd App; ant main; cd -
 
