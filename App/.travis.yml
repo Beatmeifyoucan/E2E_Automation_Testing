@@ -1,4 +1,5 @@
 language: java
+before_install: ant init-ivy
 script: ant main
 jdk:
   - oraclejdk7
