@@ -1,0 +1,17 @@
+language: java
+
+install: cd App; ant main -DskipTests=true ; cd -
+
+script: cd App; ant main; cd -
+
+jdk:
+  - oraclejdk7
+
+deploy:
+   edge: true
+   provider: cloudfoundry
+   username: jagan.kumar.rajamani@verizon.com
+   password: verizon1
+   api: https://api.run.pivotal.io
+   organization: jag.org
+   space: development
