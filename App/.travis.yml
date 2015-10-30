@@ -1,0 +1,10 @@
+language: java
+
+install: cd App; ant deps -DskipTests=true ; cd -
+
+script: cd App; ant main; cd -
+
+jdk:
+  - oraclejdk8
+  - oraclejdk7
+  - openjdk7
