@@ -1,8 +1,6 @@
 language: java
-
-install: ant deps
-
-script: ant main
-
+install: ant resolve
 jdk:
   - oraclejdk7
+  - openjdk7
+  - openjdk6
