@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test-All">
+ <test name ="TestGroup">
+ 	<classes>
+ 		<class name="NewTestCase1"/>
+ 	</classes>
+ </test>
+</suite>

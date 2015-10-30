@@ -1,0 +1,64 @@
+<?xml version="1.0" ?> 
+<project name="UnicornzApp-Build" default="main" basedir=".">
+
+	<property name="src.dir" location="src"/>
+	<property name="bin.dir" location="bin"/>
+	<property name="dist.dir" location="dist"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="resources.dir" location="resources"/>
+
+	<path id="cp">
+		<pathelement location= "${lib.dir}/jcommander.jar"/>
+		<pathelement location= "${lib.dir}/testng-6.9.4.jar"/>
+		<pathelement location= "${bin.dir}"/>
+	</path>
+	
+	<taskdef name="testng" classname="org.testng.TestNGAntTask"> 
+		<classpath>
+			<pathelement location="${lib.dir}/testng-6.9.4.jar"></pathelement>
+			<pathelement location="."></pathelement>
+		</classpath>
+	</taskdef>
+	
+	<path id="compile.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+	
+	<target name="clean">
+		<delete dir="${bin.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="makedir">
+		<mkdir dir="${bin.dir}"/>
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="compile" depends="clean, makedir" >
+		<javac srcdir= "${src.dir}" destdir="${bin.dir}" debug="true" includeantruntime="false">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+	
+	<target name="test" depends="compile">
+		<testng classpathref="cp" useDefaultListeners="true">
+			<classpath location ="${bin.dir}" />
+			<classfileset dir="${bin.dir}" includes="NewTestCase1.class"/>
+			<xmlfileset dir="${resources.dir}" includes="testng.xml"/>
+		</testng>
+	</target>
+	
+	<target name="jar" depends="test">
+		<jar destfile="${dist.dir}/UnicornzApp.jar" basedir="${bin.dir}">
+			<fileset dir="lib"/>
+		</jar>
+	</target>
+	
+	<target name="main" depends="jar">
+		<description>Execute Main Target</description>
+	</target>
+	
+</project>
