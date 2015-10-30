@@ -1,8 +1,8 @@
 language: java
 
-install: ant deps -DskipTests=true ; cd -
+install: cd App; ant deps -DskipTests=true ; cd -
 
-script: ant main; cd -
+script: cd App; ant main; cd -
 
 jdk:
   - oraclejdk8
