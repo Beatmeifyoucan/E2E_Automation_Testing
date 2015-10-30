@@ -1,11 +1,10 @@
 language: java
 
-install: cd App; ant deps -DskipTests=true ; cd -
-
-script: cd App; ant main; cd -
+script: ant main
 
 jdk:
   - oraclejdk7
+  - openjdk7
 
 deploy:
    edge: true
