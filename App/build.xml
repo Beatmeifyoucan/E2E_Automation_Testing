@@ -52,7 +52,7 @@
 	</target>
 	
 	<target name="jar" depends="test">
-		<jar destfile="${dist.dir}/End2EndAutoTes.jar" basedir="${bin.dir}">
+		<jar destfile="${dist.dir}/End2EndAutoTest.jar" basedir="${bin.dir}">
 			<fileset dir="lib"/>
 		</jar>
 	</target>
