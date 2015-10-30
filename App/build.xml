@@ -56,8 +56,12 @@
 			<fileset dir="lib"/>
 		</jar>
 	</target>
+		
+	<target name="run" depends="jar">
+	        <java jar="${dist.dir}/End2EndAutoTest.jar" fork="true"/>
+	</target>	
 	
-	<target name="main" depends="jar">
+	<target name="main" depends="clean,run">
 		<description>Execute Main Target</description>
 	</target>
 	
