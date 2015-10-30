@@ -1,8 +1,8 @@
 language: java
 
-install: cd App; ant main
+install: ant deps
 
-script: cd App; ant main
+script: ant main
 
 jdk:
   - oraclejdk7
