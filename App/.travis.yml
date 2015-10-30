@@ -1,8 +1,0 @@
-language: java
-
-install:ant main
-
-script: ant main
-
-jdk:
-  - oraclejdk7

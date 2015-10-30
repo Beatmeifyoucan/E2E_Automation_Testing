@@ -1,6 +1,0 @@
-applications:
-  - name: App
-    buildpack: java_buildpack
-    path: App/dist/End2EndAutoTest.jar
-    services:
-      - MySQL
